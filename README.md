@@ -9,13 +9,13 @@ A simple Lua script that integrates **yt-dlp** into **VLC**, allowing you to str
   (the path can be changed directly in the script)
 - Hides the command prompt window while yt-dlp processes the URL:
   - Uses a PowerShell command by default
-  - Automatically uses `yt-dlp-silent.exe` if found (a small C++ wrapper that suppresses the console without PowerShell)
+  - Automatically uses `ytdlp-silent-xp.exe` if found (a small C++ wrapper that suppresses the console without PowerShell)
 
 ## Requirements
 
 - Windows
 - VLC Media Player
-- `yt-dlp.exe` or `yt-dlp-silent.exe`
+- `yt-dlp.exe` or `ytdlp-silent-xp.exe`
 
 ## Installation
 
@@ -23,7 +23,7 @@ A simple Lua script that integrates **yt-dlp** into **VLC**, allowing you to str
 
 `VLC\lua\playlist\`
 
-2. Place `yt-dlp.exe` (or `yt-dlp-silent.exe`) in the VLC directory  
+2. Place `yt-dlp.exe` (and/or `ytdlp-silent-xp.exe`) in the VLC directory  
 or edit the script to point to its location.
 3. Restart VLC.
 
