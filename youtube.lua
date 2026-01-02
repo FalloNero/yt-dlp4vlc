@@ -2,7 +2,7 @@
 -- Place this script in VLC's lua/playlist directory
 
 local yt_dlp_path = 'yt-dlp.exe';
-local yt_dlp_silent_path = 'yt-dlp-silent.exe';
+local yt_dlp_silent_path = 'ytdlp-silent-xp.exe';
 
 function sleep(s)
   local ntime = os.time() + s
