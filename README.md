@@ -1,54 +1,52 @@
-VLC yt-dlp Lua Wrapper
+# VLC yt-dlp Lua Wrapper
 
-A simple Lua script that integrates yt-dlp directly into VLC, allowing you to stream supported online videos by simply opening a network URL in VLC.
+A simple Lua script that integrates **yt-dlp** into **VLC**, allowing you to stream supported online videos by opening a network URL in VLC.
 
-Features
+## Features
 
-Wraps yt-dlp.exe for seamless use inside VLC
+- Wraps `yt-dlp.exe` for use inside VLC
+- By default requires `yt-dlp.exe` to be in the VLC directory  
+  (the path can be changed directly in the script)
+- Hides the command prompt window while yt-dlp processes the URL:
+  - Uses a PowerShell command by default
+  - Automatically uses `yt-dlp-silent.exe` if found (a small C++ wrapper that suppresses the console without PowerShell)
 
-By default, expects yt-dlp.exe in the VLC directory
+## Requirements
 
-The path can be easily changed inside the script
+- Windows
+- VLC Media Player
+- `yt-dlp.exe` or `yt-dlp-silent.exe`
 
-Automatically hides the command window while yt-dlp resolves the stream:
+## Installation
 
-Uses a PowerShell command by default
+1. Copy the Lua script into VLC’s Lua playlist directory:
 
-If yt-dlp-silent.exe is found, it will be used instead (a small C++ wrapper that suppresses the console without PowerShell)
+`VLC\lua\playlist\`
 
-Usage
+2. Place `yt-dlp.exe` (or `yt-dlp-silent.exe`) in the VLC directory  
+or edit the script to point to its location.
+3. Restart VLC.
 
-Place the Lua script in VLC’s Lua playlist directory.
+## Usage
 
-Make sure yt-dlp.exe (or yt-dlp-silent.exe) is available.
+1. Open VLC.
+2. Go to **Media → Open Network Stream**.
+3. Paste a supported video URL and click **Play**.
 
-In VLC, select Media → Open Network Stream.
+VLC will call yt-dlp, resolve the stream, and start playback automatically.
 
-Paste a supported video URL and play.
+## Video Quality Selection
 
-Video Quality Selection
+Append the `quality` parameter to the URL to force a specific resolution:
 
-You can force a specific video quality by appending the quality parameter to the URL:
-
-&quality=xxx
-
+`&quality=xxx`
 
 Supported values:
 
-360p
+- `360p`
+- `480p`
+- `720p`
+- `1080p`
+- `2160p`
 
-480p
-
-720p
-
-1080p
-
-2160p
-
-If the parameter is omitted, the script defaults to the highest available quality.
-
-Notes
-
-Requires Windows (due to PowerShell / executable usage).
-
-VLC must have Lua playlist scripts enabled (default behavior).
+If omitted, the script defaults to the highest available quality.
