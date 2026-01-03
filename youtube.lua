@@ -49,7 +49,7 @@ function parse()
         cmd_hidden = 'PowerShell.exe -windowstyle hidden cmd /c &'
 
         local cmd = string.format(
-            '%s "%s" -f \"%s\" -g %s',
+            '%s "%s" -f \"%s\" -g --no-warnings  %s',
             cmd_hidden,
             yt_dlp_path,
             format_string,
@@ -63,7 +63,7 @@ function parse()
     else
         vlc.msg.info(yt_dlp_silent_path .. " found. Running program")
         local cmd = string.format(
-            '%s -s "%s -f \"%s\" -g %s"',
+            '%s -s "%s -f \"%s\" -g --no-warnings %s"',
             cmd_hidden,
             yt_dlp_path,
             format_string,
