@@ -9,9 +9,10 @@ function sleep(s)
   repeat until os.time() > ntime
 end
 
+-- ravensorrow fix :3
 function probe()
     -- Check if the input is a YouTube link
-    return vlc.access == "http" or vlc.access == "https" and 
+    return (vlc.access == "http" or vlc.access == "https") and 
            (string.match(vlc.path, "youtube%.com") or string.match(vlc.path, "youtu%.be"))
 end
 
